@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-base-950 text-slate-700 antialiased;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(124,92,252,0.06), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(124,92,252,0.05), transparent 35%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E5; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #AEB9CE; }
+
+.card {
+  @apply bg-base-900/95 border border-black/5 rounded-2xl shadow-sm;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-base-950;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
